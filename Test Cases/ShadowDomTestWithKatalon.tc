@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>KatalonShadowDomTest</description>
+   <name>ShadowDomTestWithKatalon</name>
+   <tag>KatalonShadowDomTest</tag>
+   <comment></comment>
+   <testCaseGuid>4b6a1c5f-d4d1-4616-8b42-d78914b89b20</testCaseGuid>
+</TestCaseEntity>

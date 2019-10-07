@@ -22,11 +22,11 @@ class ShadowKeywords {
 		Shadow shadow = new Shadow(driver)
 		WebElement element = shadow.findElement(cssSelector)
 		if(null!=element) {
-		 return element
-		 }
-		 else {
-		 throw new Exception("CSS "+cssSelector+" could not find any matching elements.")
-		 }
+			return element
+		}
+		else {
+			throw new Exception("CSS "+cssSelector+" could not find any matching elements.")
+		}
 	}
 
 	/**
@@ -49,7 +49,7 @@ class ShadowKeywords {
 	 * @return WebElement object
 	 */
 	@Keyword
-	public WebElement findElement(WebElement parent, String cssSelector) {
+	public WebElement findElementInsideParent(WebElement parent, String cssSelector) {
 		WebDriver driver = DriverFactory.getWebDriver()
 		Shadow shadow = new Shadow(driver)
 		WebElement element = shadow.findElement(parent, cssSelector)
@@ -68,7 +68,7 @@ class ShadowKeywords {
 	 * @return List of WebElement object
 	 */
 	@Keyword
-	public List<WebElement> findElements(WebElement parent, String cssSelector) {
+	public List<WebElement> findElementsInsideParent(WebElement parent, String cssSelector) {
 		WebDriver driver = DriverFactory.getWebDriver()
 		Shadow shadow = new Shadow(driver)
 		List<WebElement> elements = shadow.findElements(parent, cssSelector)

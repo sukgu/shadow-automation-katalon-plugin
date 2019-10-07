@@ -21,9 +21,9 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:8082/frevvo/web/login')
 
-WebUI.setText(findTestObject('Object Repository/Page_frevvo  Login/input_Username_username'), 'd@t')
+WebUI.setText(findTestObject('Object Repository/Page_frevvo  Login/input_Username_username'), 'd@d')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Page_frevvo  Login/input_Password_password'), 'bTVIq92haJs=')
+WebUI.setEncryptedText(findTestObject('Object Repository/Page_frevvo  Login/input_Password_password'), 'hngrAGUO4YCAWaVv7sCGDQ==')
 
 WebUI.sendKeys(findTestObject('Object Repository/Page_frevvo  Login/input_Password_password'), Keys.chord(Keys.ENTER))
 

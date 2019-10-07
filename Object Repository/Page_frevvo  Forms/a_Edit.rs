@@ -6,11 +6,17 @@
    <elementGuidId>92152558-a194-4093-bbf3-99dbc550d28e</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>BASIC</key>
+         <value>//*[@title = 'edit Form AAAA' and @class = 'a-edit-form' and @href = '#' and (text() = ' Edit
+                                                   									' or . = ' Edit
+                                                   									')]</value>
+      </entry>
+      <entry>
          <key>XPATH</key>
          <value>(//a[@onclick=&quot;_frevvo.applicationController.editForm.doIt(null, this, 'formtype/_ubXpYN36EemmIJjiUdS1lA?edit=true&amp;_method=post&amp;backlink=OWNER-FORM-LIST&amp;_formTz='+FormTz.getName(), false); return false;&quot;])[2]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -24,10 +30,10 @@
       <matchCondition>equals</matchCondition>
       <name>title</name>
       <type>Main</type>
-      <value>edit Form 9</value>
+      <value>edit Form AAAA</value>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>false</isSelected>
+      <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>class</name>
       <type>Main</type>
