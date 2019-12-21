@@ -11,6 +11,34 @@ import io.github.sukgu.Shadow
 
 class ShadowKeywords {
 
+	private static Shadow shadow
+	private static WebDriver driver
+
+	static {
+		driver = DriverFactory.getWebDriver()
+		shadow = new Shadow(driver)
+	}
+
+	/**
+	 * setImplicitWait
+	 * @param int seconds.
+	 * @return void
+	 */
+	@Keyword
+	public void setImplicitWait(int seconds) {
+		shadow.setImplicitWait(seconds)
+	}
+
+	/**
+	 * setExplicitWait
+	 * @param int seconds.
+	 * @return void
+	 */
+	@Keyword
+	public void setExplicitWait(int seconds, int pollingTime) {
+		shadow.setExplicitWait(seconds, pollingTime)
+	}
+
 	/**
 	 * findElement
 	 * @param cssSelector CSS selector for element to be find.
@@ -18,8 +46,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public WebElement findElement(String cssSelector) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		WebElement element = shadow.findElement(cssSelector)
 		if(null!=element) {
 			return element
@@ -36,8 +62,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public List<WebElement> findElements(String cssSelector) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		List<WebElement> elements = shadow.findElements(cssSelector)
 		return elements
 	}
@@ -50,8 +74,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public WebElement findElementInsideParent(WebElement parent, String cssSelector) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		WebElement element = shadow.findElement(parent, cssSelector)
 		if(null!=element) {
 			return element
@@ -69,8 +91,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public List<WebElement> findElementsInsideParent(WebElement parent, String cssSelector) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		List<WebElement> elements = shadow.findElements(parent, cssSelector)
 		return elements
 	}
@@ -83,8 +103,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public WebElement getShadowElement(WebElement parent,String selector) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		WebElement element = shadow.getShadowElement(parent, selector)
 		if(null!=element) {
 			return element
@@ -102,8 +120,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public List<WebElement> getAllShadowElement(WebElement parent,String selector) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		List<WebElement> elements = shadow.getAllShadowElement(parent, selector)
 		return elements
 	}
@@ -115,8 +131,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public WebElement getParentElement(WebElement element) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		WebElement returnedElement = shadow.getParentElement(element)
 		if(null!=returnedElement) {
 			return returnedElement
@@ -133,8 +147,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public List<WebElement> getChildElements(WebElement parent) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		List<WebElement> elements = shadow.getChildElements(parent)
 		return elements
 	}
@@ -146,8 +158,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public List<WebElement> getSiblingElements(WebElement element) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		List<WebElement> elements = shadow.getSiblingElements(element)
 		return elements
 	}
@@ -160,8 +170,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public WebElement getSiblingElement(WebElement element, String selector) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		WebElement returnedElement = shadow.getSiblingElement(element)
 		if(null!=returnedElement) {
 			return returnedElement
@@ -178,8 +186,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public WebElement getNextSiblingElement(WebElement element) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		WebElement returnedElement = shadow.getNextSiblingElement(element)
 		if(null!=returnedElement) {
 			return returnedElement
@@ -196,8 +202,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public WebElement getPreviousSiblingElement(WebElement element) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		WebElement returnedElement = shadow.getPreviousSiblingElement(element)
 		if(null!=returnedElement) {
 			return returnedElement
@@ -214,8 +218,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public boolean isVisible(WebElement element) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		return shadow.isVisible(element);
 	}
 
@@ -226,8 +228,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public boolean isChecked(WebElement element) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		return shadow.isChecked(element);
 	}
 
@@ -238,8 +238,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public boolean isDisabled(WebElement element) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		return shadow.isDisabled(element);
 	}
 
@@ -251,8 +249,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public String getAttribute(WebElement element,String attribute) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		return shadow.getAttribute(element, attribute);
 	}
 
@@ -263,8 +259,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public void selectCheckbox(String label) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		shadow.selectCheckbox(label);
 	}
 
@@ -276,8 +270,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public void selectCheckbox(WebElement parentElement, String label) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		shadow.selectCheckbox(parentElement, label);
 	}
 
@@ -288,8 +280,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public void selectRadio(String label) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		shadow.selectRadio(label);
 	}
 
@@ -301,8 +291,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public void selectRadio(WebElement parentElement, String label) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		shadow.selectRadio(parentElement, label);
 	}
 
@@ -313,8 +301,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public void selectDropdown(String label) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		shadow.selectDropdown(label);
 	}
 
@@ -326,8 +312,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public void selectDropdown(WebElement parentElement, String label) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		shadow.selectDropdown(parentElement, label);
 	}
 
@@ -338,8 +322,6 @@ class ShadowKeywords {
 	 */
 	@Keyword
 	public void scrollTo(WebElement element) {
-		WebDriver driver = DriverFactory.getWebDriver()
-		Shadow shadow = new Shadow(driver)
 		shadow.scrollTo(element)
 	}
 }

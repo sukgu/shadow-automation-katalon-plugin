@@ -24,6 +24,10 @@ You can use this Katalon Keyword Plugin by importing jar file or by installing p
 ## How it works:
 
 ## Methods:
+  `void setImplicitWait(int seconds)` : use this method for implicit wait
+
+  `void setExplicitWait(int seconds, int pollingTime) throws Exception` : use this method for explicit wait
+  
   `WebElement findElement(String cssSelector)` : use this method if want single element from DOM
 
   `List<WebElement> findElements(String cssSelector)` : use this if you want to find all elements from DOM
@@ -111,6 +115,16 @@ You can use this Katalon Keyword Plugin by importing jar file or by installing p
 	WebElement element = shadow.findElement("properties-page#settingsPage>textarea#textarea");
     String text = element.getText();
   ```
+##Wait: Implicit and Explicit
+If you want to use wait to synchronize your scripts then you should use the implicit or explicit wait feature.
+
+- For Implicit wait, you can use shadow.setImplicitWait(int seconds) method.
+
+- For Explicit wait, you can use shadow.setExplicitWait(int seconds, int pollingTime) method.
+
+- In Implicit wait, the driver will wait for at least n seconds as set in shadow.setImplicitWait(n).
+
+- In Explicit wait, the driver will wait for at max n seconds as set in shadow.setImplicitWait(n,m). In between driver will check for presence of WebElement every m seconds.
   
   ###### Note: > is used to combine multi level dom structure. So you can combine 5 levels of dom. If you want some more level modify the script and ready to rock.
   

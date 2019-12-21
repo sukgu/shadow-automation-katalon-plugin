@@ -40,7 +40,7 @@ katalon {
 }
 
 dependencies {
-  compile 'io.github.sukgu:automation:0.0.10'
+  compile 'io.github.sukgu:automation:0.0.12'
 }
 
 configurations {

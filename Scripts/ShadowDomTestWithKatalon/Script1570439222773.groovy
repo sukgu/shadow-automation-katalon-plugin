@@ -16,10 +16,9 @@ import org.openqa.selenium.WebElement as WebElement
 
 WebUI.openBrowser('https://lit-element.polymer-project.org/')
 
-WebUI.delay(10)
+CustomKeywords.'com.katalon.plugin.keyword.shadow.ShadowKeywords.setExplicitWait'(10, 2)
 
-WebElement obje = CustomKeywords.'com.katalon.plugin.keyword.shadow.ShadowKeywords.findElement'('div#container>button')
+WebElement obje = CustomKeywords.'com.katalon.plugin.keyword.shadow.ShadowKeywords.findElement'('stack-blitz>div#container>button')
 
-obje.click();
-
+obje.click()
 
